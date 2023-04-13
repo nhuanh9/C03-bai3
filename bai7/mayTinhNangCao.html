@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<table>
+    <tr>
+        <td colspan="4">
+            <input type="text" id="scr">
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <button onclick="nhap(1)">1</button>
+        </td>
+        <td>
+            <button onclick="nhap(2)">2</button>
+        </td>
+        <td>
+            <button onclick="nhap(3)">3</button>
+        </td>
+        <td>
+            <button onclick="nhap('-')">-</button>
+        </td>
+    </tr>
+    <tr>
+        <td><button onclick="tinh()">=</button></td>
+    </tr>
+</table>
+<script>
+    function nhap(kt) {
+        document.getElementById('scr').value += kt;
+    }
+    function tinh() {
+        document.getElementById('scr').value = eval( document.getElementById('scr').value);
+    }
+</script>
+</body>
+</html>

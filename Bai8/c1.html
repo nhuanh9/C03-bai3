@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title></title>
+</head>
+<body>
+</body>
+<script>
+  let i = +prompt('Nhập số điểm của học sinh: ')
+  if (i >= 0){
+    if (i < 5){
+      alert('Thằng này kém')
+    } else if (i < 8) {
+      alert('Thằng này khá')
+    } else if (i >= 8) {
+      if (i <= 10) {
+        alert('Thằng này giỏi')
+      } else if (i > 10) {
+        alert('Mày nhập sai điểm rồi')
+      }
+    }
+  } else {
+    alert('Mày nhập sai điểm rồi')
+  }
+</script>
+</html>

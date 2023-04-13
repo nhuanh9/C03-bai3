@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="txt1">
+<input type="text" id="txt2">
+<button onclick="tinh('+')">Plus</button>
+<button onclick="tinh('-')">Subtract</button>
+<h1 id="kq">Rs = </h1>
+<script>
+    function tinh(x) {
+        let st1 = +document.getElementById('txt1').value;
+        let st2 = +document.getElementById('txt2').value;
+        if (x == '+') {
+            document.getElementById('kq').innerHTML = 'Tong la: '+ (st2 + st1);
+        }
+        if (x == '-') {
+            document.getElementById('kq').innerHTML = 'Hieu la: '+ (st2 - st1);
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--
+    if (x) {
+        a
+    }
+    x - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true;
+
+    if (x && y) {
+        a
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true và y = true;
+
+    if (x || y) {
+        a
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true hoặc y = true;
+-->
+<!--
+    if (x) {
+        if (y) {
+            a;
+        }
+        b;
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x và y là true;
+    b - đoạn code chạy khi x - true;
+-->
+<!--
+    if (x) {
+        a
+    } else {
+        b
+    }
+    x - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true;
+    b - đoạn code chạy khi x = false;
+
+    if (x && y) {
+        a
+    } else {
+        b
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true && y = true;
+    b - đoạn code chạy khi x hoặc y = false;
+
+     if (x || y) {
+        a
+    } else {
+        b
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true hoặc y = true;
+    b - đoạn code chạy khi x = false và y = false;
+
+     if (x) {
+        a
+    } else if (y){
+        b
+    } else {
+        c
+    }
+    x, y - boolean (true/false): điều kiện;
+    a - đoạn code chạy khi x = true;
+    b - đoạn code chạy khi x = false và y = true;
+    c - đoạn code chạy khi x = false, y = false;
+-->
+
+<!--
+    Phân loại học sinh:
+    < 5: 'Dốt'
+    <8: 'Khá'
+    >=8: 'Giỏi'
+
+    Bàn 1, 3: không dùng &&, ||
+    Bàn 4: không dùng else, không lồng
+    Bàn 2: dùng else if
+
+-->
+
+
+
+<script>
+    let a = 10;
+    if ( a< 5) {
+
+    }
+
+    if (5<a && a<8) { // sai: (5<a<8)
+
+    }
+    if (a === 5) { // sai: (a = 5)
+
+    }
+
+//    & vs &&; | vs ||
+</script>
+</body>
+</html>

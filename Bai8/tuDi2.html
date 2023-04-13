@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<img src="2%20copy.jpeg" id="a" style="left: 300px; position: relative; width: 100px">
+<script>
+    let speedX = 10
+    setInterval(() => {
+        document.getElementById('a').style.left = parseInt(document.getElementById('a').style.left) + speedX + 'px';
+        if (parseInt(document.getElementById('a').style.left) >= window.innerWidth || parseInt(document.getElementById('a').style.left) <= 0) {
+            speedX = -speedX;
+        }
+    }, 10)
+</script>
+</body>
+</html>
