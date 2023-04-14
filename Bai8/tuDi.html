@@ -5,16 +5,36 @@
     <title>Title</title>
 </head>
 <body>
-<img src="2%20copy.jpeg" id="a" style="left: 300px; position: relative; width: 100px">
+<img src="2%20copy.jpeg" id="a" style="left: 300px; position: relative; width: 100px; top: 0px">
 <script>
-    setInterval(()=> {
-        document.getElementById('a').style.left = parseInt(document.getElementById('a').style.left) + 100 + 'px';
-        if(parseInt(document.getElementById('a').style.left) >= window.innerWidth) {
-            document.getElementById('a').style.left = '0px'
+    let speedX = 10;
+    let speedY = 0;
+    let S = 0;
+    setInterval(() => {
+        document.getElementById('a').style.left = parseInt(document.getElementById('a').style.left) + speedX + 'px';
+        document.getElementById('a').style.top = parseInt(document.getElementById('a').style.top) + speedY + 'px';
+        S += 10;
+        if ( S == 1200) {
+            speedX = 0;
+            speedY = 10;
         }
-    }, 100)
+        if ( S == 1800) {
+            speedX = -10;
+            speedY = 0;
+        }
+        if ( S == 3000) {
+            speedX = 0;
+            speedY = -10;
+        }
 
-//    Di quanh man hinh??
+        if ( S == 3600) {
+            speedX = 10;
+            speedY = 0;
+            S = 0;
+        }
+    }, 5)
+
+    //    Di quanh man hinh??
 </script>
 </body>
 </html>

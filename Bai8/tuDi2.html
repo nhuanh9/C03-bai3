@@ -8,12 +8,17 @@
 <img src="2%20copy.jpeg" id="a" style="left: 300px; position: relative; width: 100px">
 <script>
     let speedX = 10
+    let speedY = 0
     setInterval(() => {
         document.getElementById('a').style.left = parseInt(document.getElementById('a').style.left) + speedX + 'px';
-        if (parseInt(document.getElementById('a').style.left) >= window.innerWidth || parseInt(document.getElementById('a').style.left) <= 0) {
-            speedX = -speedX;
-        }
+        document.getElementById('a').style.top = parseInt(document.getElementById('a').style.top) + speedY + 'px';
     }, 10)
+    window.addEventListener('keydown', e => {
+        if (e.key == 'a') {
+            speedX = -10;
+            speedY = 0;
+        }
+    })
 </script>
 </body>
 </html>

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+1. In ra 100 chữ 'Hello'
+2. Nhập vào N từ prompt. In ra N lần chữ 'Hello'
+3. In ra cac số từ 1 đến 1000;
+4. In ra cac số từ a đến b;
+5. In ra cac số từ a đến b, mỗi số trong 1 thẻ <h1>;
+6. In ra các số chẵn tu a đến b;
+7. In ra các tu a đến b số chẵn trong h2, so le trong h1;
+8. Tính tích.
+9. Tính Tổng các số chia 5 dư 2 từ a đến b.
+-->
+<script>
+    let a = prompt('Nhập vào a: ');
+    let b = prompt('Nhập vào b: ');
+    let tong = 0;
+    for (let i = a; i <= b; i++) {
+        if (i % 5 == 2) {
+            tong += i;
+        }
+    }
+    document.write(tong)
+</script>
+</body>
+</html>
