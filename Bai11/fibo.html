@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<!--  1, 1, 2, 3, 5, 8, 13, 21, 34  -->
+<!--  a, b => 1, 1  -->
+<!--(b' = a+b; a' = b;)  a, b => 1,2  -->
+<!--(b' = a+b; a' = b;)  a, b => 2,3  -->
+<!-- (Số thứ n+2) = (số thứ n+1) + (số thứ n)-->
+<script>
+    let a = 1;
+    let b = 1;
+    document.write(a + '<br>')
+    document.write(b + '<br>')
+    for (; ;) {
+        let c = a + b;
+        if (c >= 100) {
+            break;
+        }
+        a = b;
+        b = c;
+        document.write(c + '<br>')
+    }
+</script>
+</body>
+</html>
