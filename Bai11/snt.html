@@ -12,15 +12,23 @@
     20 snt đầu tien
 -->
 <script>
-    let so = +prompt('Nhập vào số cần kiểm tra!');
-    let ktSNT = 'Là SNT';
-    for (let i = 2; i < so; i++) {
-        if (so % i === 0) {
-            ktSNT = 'Không là SNT';
+    let dem = 0;
+    for (let x = 2; ; x++) { // Chạy x từ 2 đếm 1000
+        let ktSNT = 'Là SNT';
+        for (let i = 2; i < x; i++) { // Kiểm tra x xem có phải snt không
+            if (x % i === 0) { // nếu x chia hết cho i thì x không phải snt
+                ktSNT = 'Không là SNT';
+                break;
+            }
+        }
+        if (ktSNT === 'Là SNT') { //Nếu x là snt thì in ra và tăng đếm lên 1
+            document.write(x); // in
+            dem++; // tăng đếm
+        }
+        if (dem === 20) { // khi đủ 20 số thì dừng
             break;
         }
     }
-    alert(ktSNT)
 </script>
 </body>
 </html>
