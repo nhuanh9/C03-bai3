@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    So nguyen to: so chỉ chia het cho 1 va chinh no (2, 3, 5, 7, 11, 13, 19, ...)!
+    Nếu x chia het cho 1 so bat ki nho hon x (2->x-1)
+    => Thì nó không phải số nguyên tố.
+    20 snt đầu tien
+-->
+<script>
+    let so = +prompt('Nhập vào số cần kiểm tra!');
+    let ktSNT = 'Là SNT';
+    for (let i = 2; i < so; i++) {
+        if (so % i === 0) {
+            ktSNT = 'Không là SNT';
+            break;
+        }
+    }
+    alert(ktSNT)
+</script>
+</body>
+</html>
