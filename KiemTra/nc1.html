@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+"Nhập vào n. Tính
+S = 100 +1/3 + 1/2 + 3/5 + … + n*(n + 1)/ (n+1)*(n + 2); "
+S1 = 100 +1 +2 +... +n;
+-->
+<script>
+    let n = 80;
+    let S1 = 100;
+    for (let i = 1; i <= n; i++) {
+        S1 += i / (i + 2);
+    }
+    alert(S1);
+</script>
+</body>
+</html>

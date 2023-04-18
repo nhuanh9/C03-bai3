@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let a = prompt('Nhập a: ');
+    let b = prompt('Nhập b: ');
+    if (a > b) {
+        alert(a * b);
+    }
+    if (b > a) {
+        let tich = 1;
+        for (let i = a; i <= b; i++) {
+            tich *= i;
+        }
+        document.write('Tong nà: ' + tich)
+    }
+
+
+</script>
+</body>
+</html>
