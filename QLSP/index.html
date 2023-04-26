@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="name">
+<button onclick="addProduct()">Add</button>
+<hr>
+<div id="display"></div>
+<div id="edit"></div>
+<script>
+    let listProduct = ['Ip12', 'Ip13', 'S22', 'S23'];
+    displayList()
+
+    function displayList() {
+        let str = ''
+        for (let i = 0; i < listProduct.length; i++) {
+            str += listProduct[i] + `<button onclick="showFormEdit(${i})">Edit</button><button onclick="deleteProduct(${i})">Delete</button><br>`
+        }
+        document.getElementById('display').innerHTML = str
+    }
+
+    //Thêm: giao diện => viết function: lấy dữ liệu, push vào mảng, hiển thị lại
+    function addProduct() {
+        let newProduct = document.getElementById('name').value; // lấy dữ liệu vừa nhập từ ô input
+        listProduct.push(newProduct); // thêm dữ liệu mới vòa mảng
+        displayList(); // hiển thị lại danh sách sau khi thêm
+        document.getElementById('name').value = '' // đưa input về rỗng sau khi thêm
+    }
+
+    //Xóa: thử hàm lấy đúng vị trí chưa => xóa => cập nhật gia diện
+    function deleteProduct(index) {
+        listProduct.splice(index, 1); //    xóa phần tử thứ index trong mảng(splice)
+        displayList() //    cập nhật hiển thị(display)
+        //    confirm()???
+    }
+
+    function showFormEdit(index) {
+        // Hiện form edit
+        document.getElementById('edit').innerHTML = `<input type="text" id="nameEdit"><button onclick="save(${index})">Edit</button>`
+        document.getElementById('nameEdit').value = listProduct[index]; // hiện dữ liệu cũ lên form.
+    }
+
+    function save(index) {
+        listProduct[index] = document.getElementById('nameEdit').value; // cập nhật dữ liệu mới vào mảng tai vị trí index
+        displayList(); // cập nhật giao diện.
+        document.getElementById('edit').innerHTML = '' // Ẩn form edit
+    }
+</script>
+</body>
+</html>

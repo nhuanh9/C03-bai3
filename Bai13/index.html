@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+    Các hàm đi kèm mảng: push, splice, indexOf, ...
+    Mảng đa chiều
+-->
+
+<script>
+    let arr = [3, 5, 1, 5, 7, 4, 2, 8]; //length: 8
+    let arr2 = [3, 5, 1, 5, 7, 4, 2, 8]; //length: 8
+    arr.push(arr2[i]); // thêm 10 vào cuối mảng, tăng length lên 1
+    //    [3, 5, 1, 5, 7, 4, 2, 8, 10]; length: 9
+
+    arr.splice(3, 2);
+    //    Từ vị trí thứ 3 xóa đi 2 phan tử
+    //    length: 7, [3, 5, 1, 4, 2, 8, 10]
+    let x = 5;
+    let y = arr.indexOf(x); // 1
+    //    Nễu x có thì cho biết vị trí
+    //     Nếu x không có thì cho -1'
+
+    // Nhập vào z, nếu z có trong mảng thì xóa đi, không có thì bảo không có
+    //  Dùng indexOf tìm z trong mảng: vt = arr.indexOf(z)
+    //  Nếu vt là -1 => "Không có trong mảng"
+    //  Nếu vt khác -1 => arr.splice (vt, 1);
+</script>
+</body>
+</html>

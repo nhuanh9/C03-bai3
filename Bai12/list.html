@@ -8,13 +8,50 @@
 <!--
     1. In ra các phần tử trong mảng
     2. In ra các phần tử chan trong mảng;
-    3. In ra các phần tử a đến b số chẵn trong h2, le trong h1;
+    3. In ra các phần số chẵn trong h2, le trong h1;
     4. Tính tích các phần tử.
     5. Tính Tổng các phần tử.
     6. Nhap vào a, đếm số luong a trong mảng.
     7. Tìm max trong mảng.
     8. Nhap vao a, tim vi tri cua a trong mảng.
 -->
+<!--
+    1. Mảng: 1 biến đặc biệt,
+    có thể chứa nhiều giá trị bên trong,
+    chứa được nhiều kiểu dữ liệu
+    2. let arr = [1, true, '3'];
+    let arr = [];
+    3. arr.length: số lượng phần tử
+    let arr = [1, 2, 3];  3
+    let arr = []; 0
+    4. Cách lấy giá trị 1 phần tử tại vị trí thứ 2:
+    let arr = [1, 2, 3, 5, 6]; alert(arr[1])
+    ví trí     0, 1, 2, 3, 4
+    5. Cách lấy giá trị 1 phần tử tại vị trí thứ i:
+    - arr[i]
+    - i = 0 -> i < arr.length
+    6. Cách duyệt:
+    let arr = [];
+    for(let i =0; i< arr.length; i++) {
+       arr[i]
+    }
+-->
 
+<script>
+    let arr = [3, 2, 2, 1, 4, 2, 8, 8, 8];
+    let max = arr[0];
+    for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+            max = arr[i];
+        }
+    }
+
+    document.getElementById('id').innerHTML = 'Hello';
+
+
+//    sort, max, indexOf() => mảng đối không thể dung.
+//    if (i%2...), i>max => "Vị trí": i; giá trị: arr [i]
+//    arr.length => tên mảng.length
+</script>
 </body>
 </html>
