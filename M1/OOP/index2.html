@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    let listProduct = [
+        {
+            name: 'A',
+            price: '100',
+            amount: 10
+        }, {
+            name: 'B',
+            price: '1000',
+            amount: 20
+        },  {
+            name: 'C',
+            price: '101',
+            amount: 10
+        },
+    ]
+    let str = ''
+    for (let i = 0; i < listProduct.length; i++) {
+        str += listProduct[i].name + ',' + listProduct[i].price + ',' + listProduct[i].amount + '<br>'
+    }
+    listProduct.push({name: 'D', price: 100, amount: 15});
+    document.getElementById('display').innerHTML = str;
+</script>
+</body>
+</html>

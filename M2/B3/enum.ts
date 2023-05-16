@@ -1,0 +1,14 @@
+enum LIST_MY_CHOICE {
+    CBR650R,
+    CBR500R,
+    CB650R
+}
+enum LIST_MY_CHOICE_PRICE {
+    CBR650R= '220',
+    CBR500R = '130',
+    CB650R = '200'
+}
+
+console.log(LIST_MY_CHOICE[0]);
+console.log(LIST_MY_CHOICE.CBR500R);
+console.log(LIST_MY_CHOICE_PRICE.CBR500R);

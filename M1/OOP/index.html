@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="display"></div>
+<script>
+    let listName = ['Ip12', 'Ip13', 'S22', 'S23'];
+    let listPrice = ['100', '1000', '101', '1001'];
+    let listAmount = ['10', '20', '20', '30'];
+    // Hiện ra danh sách: name, price, amount mỗi sản phẩm 1 hàng;
+    let str = ''
+    for (let i = 0; i < listName.length; i++) {
+        str += listName[i] + ',' + listPrice[i] + ',' + listAmount[i] + '<br>'
+    }
+    listName.push('S24')
+    listAmount.push(10000)
+    listPrice.push(10)
+    document.getElementById('display').innerHTML = str;
+</script>
+</body>
+</html>

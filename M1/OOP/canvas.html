@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>TAKE MY OAK!</title>
+</head>
+<body>
+<center>
+    <canvas id="myCanvas" width="500" height="700" style="border: 1px black"></canvas>
+</center>
+</body>
+</html>
+<script>
+    let ctx = document.getElementById('myCanvas').getContext('2d')
+    let game = "start";
+    let scrat = new Character(200, 550, 100, 100);
+    let oak = new Obstacles(100, 100, 70, 70);
+    oak.randomLocation();
+    let female = new Obstacles(100, 100, 100, 100);
+    female.randomLocation();
+
+    function createBackGround() {
+        let backGroundImg = new Image();
+        backGroundImg.src = 'background.jpg';
+        ctx.beginPath();
+        ctx.drawImage(backGroundImg, 0, 0, 500, 700)
+    }
+    function Character(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.score = 0;
+        this.moveLeft = function () {
+            if (this.x > 50) {
+                this.x = this.x - 60;
+            }
+        }
+        this.moveRight = function () {
+            if (this.x < 350) {
+                this.x = this.x + 60;
+            }
+        }
+        this.checkPoint = function () {
+            if (
+                (scrat.y + 70 == oak.y + 100) &&
+                (scrat.x >= oak.x) &&
+                (scrat.x <= oak.x + 100)) {
+                this.score++;
+                oak.randomLocation();
+            }
+            if (
+                (oak.y + 100 == scrat.y + 70) &&
+                (scrat.x + 100 <= oak.x + 100) &&
+                (scrat.x + 100 >= oak.x)
+            ) {
+                this.score++;
+                oak.randomLocation();
+            }
+            if (
+                (scrat.y + 30 == female.y + 100) &&
+                (scrat.x >= female.x) &&
+                (scrat.x <= female.x + 100)) {
+                alert('SHE STOLE YOUR OAK!!! YOUR SCORE IS: ' + this.score)
+                location.reload();
+            }
+            if (
+                (female.y + 100 == scrat.y + 30) &&
+                (scrat.x + 100 <= female.x + 100) &&
+                (scrat.x + 100 >= female.x)
+            ) {
+                alert('SHE STOLE YOUR OAK!!! YOUR SCORE IS: ' + this.score)
+                location.reload();
+            }
+        }
+        this.drawScrat = function () {
+            let scratImg = new Image();
+            this.checkPoint();
+            scratImg.src = 'scrat1.png';
+            ctx.beginPath();
+            ctx.drawImage(scratImg, this.x, this.y, this.width, this.height);
+            ctx.font = "50px Arial"
+            ctx.fillText(this.score, 430, 60);
+        }
+    }
+    function Obstacles(x, y, width, height) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.dropDown = function () {
+            this.y += 5;
+        }
+        this.randomLocation = function () {
+            this.y = 0;
+            this.x = Math.random() * 430;
+        }
+        this.drawOak = function () {
+            let oakImg = new Image();
+            oakImg.src = 'oak.png';
+            ctx.beginPath();
+            ctx.drawImage(oakImg, this.x, this.y, this.width, this.height)
+            if (this.y + 100 == 700) {
+                this.randomLocation();
+            }
+        }
+        this.drawFemale = function () {
+            let femaleImg = new Image();
+            femaleImg.src = 'female.png';
+            ctx.beginPath();
+            ctx.drawImage(femaleImg, this.x, this.y, this.width, this.height)
+            if (this.y + 100 == 700) {
+                this.randomLocation();
+            }
+        }
+    }
+
+    function moveOak() {
+        ctx.clearRect(0, 0, 500, 700);
+        createBackGround();
+        if (game == "start") {
+            ctx.beginPath();
+            ctx.font = "60px Arial";
+            ctx.fillText('Press',170,300);
+            ctx.fillText('BACKSPACE',70,370);
+            ctx.fillStyle = 'yellow';
+            ctx.strokeText('Press',170,300);
+            ctx.strokeText('BACKSPACE',70,370);
+        }
+        if (game == "play") {
+            scrat.drawScrat()
+            oak.drawOak();
+            female.drawFemale();
+        }
+    }
+    function oakDrop() {
+        oak.dropDown();
+        female.dropDown();
+        moveOak();
+        setTimeout(oakDrop, 40 / (scrat.score + 1));
+    }
+    oakDrop();
+
+    function pressKey(event) {
+        switch (event.which) {
+            case 37:
+                scrat.moveLeft();
+                moveOak();
+                break;
+            case 39:
+                scrat.moveRight();
+                moveOak();
+                break;
+            case 32:
+                game = "play";
+                break;
+        }
+    }
+    function play() {
+        window.addEventListener('keydown', pressKey)
+    }
+    play();
+</script>

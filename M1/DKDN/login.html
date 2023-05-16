@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h1>Đăng nhập</h1>
+<input type="text" id="usn">
+<input type="password" id="pass">
+<button onclick="login()">Đăng nhập</button>
+<script>
+    function login() {
+        let usn = document.getElementById('usn').value
+        let pass = document.getElementById('pass').value
+        if (usn = 'admin' && pass =='1') {
+            window.location = 'index.html'
+        } else {
+            alert('Sai TK MK')
+        }
+    }
+</script>
+</body>
+</html>

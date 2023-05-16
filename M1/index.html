@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let listQ = [
+        {
+            content: 'Thành ăn gì?',
+            A: 'Cơm',
+            B: 'C**',
+            C: 'Cần',
+            D: 'Đá',
+            trueAnswer: 'C**'
+        },
+        {
+            content: 'Quỳnh ăn gì?',
+            A: 'Cơm',
+            C: 'C**',
+            B: 'Cần',
+            D: 'Đá',
+            trueAnswer: 'C**'
+        }
+    ]
+    let index = 0;
+    let str = `
+        <h1>${listQ[0].content}</h1>
+        <button onclick="check(${listQ[0].trueAnswer},${listQ[0].A} )">${listQ[0].A}</button>
+        <button onclick="check('${listQ[0].trueAnswer}','${listQ[0].B}' )">${listQ[0].B}</button>
+        <button onclick="check(${listQ[0].trueAnswer},${listQ[0].C} )">${listQ[0].C}</button>
+        <button onclick="check(${listQ[0].trueAnswer},${listQ[0].D} )">${listQ[0].D}</button>
+    `;
+    document.write(str)
+    function check(trueAnswer, answer) {
+        if (trueAnswer == answer) {
+            alert('Đúng r!');
+            index++;
+        }
+    }
+</script>
+</body>
+</html>

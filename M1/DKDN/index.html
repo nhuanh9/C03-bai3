@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="display">
+    <button onclick="loginForm()">Login</button>
+    <button onclick="registerForm()">Register</button>
+</div>
+<script>
+    let listUser = []
+    function loginForm() {
+        document.getElementById('display').innerHTML = `
+            <input type="text" id="usn">
+            <input type="text" id="pass">
+            <button onclick="login()">Login</button>
+        `
+    }
+    function registerForm() {
+        document.getElementById('display').innerHTML = `
+            <input type="text" id="usn">
+            <input type="text" id="pass">
+            <button onclick="register()">Register</button>
+            <button onclick="loginForm()">Login</button>
+        `
+    }
+    function register() {
+        let usn = document.getElementById('usn').value
+        let pass = document.getElementById('pass').value
+        listUser.push({
+            username: usn,
+            password: pass
+        })
+        alert('Thành công');
+        document.getElementById('usn').value = ''
+        document.getElementById('pass').value = ''
+    }
+    function login() {
+        let usn = document.getElementById('usn').value
+        let pass = document.getElementById('pass').value
+        for (let i = 0; i < listUser.length; i++) {
+            if (listUser[i].username == usn && listUser[i].password == pass) {
+                document.getElementById('display').innerHTML = 'Trang chủ'
+            }
+        }
+    }
+</script>
+
+</body>
+</html>

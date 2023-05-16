@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--
+OOP: lập trình huong doi tuong:
+- 1 pp lap trinh
+- Xoay quanh đối tượng, lớp (Dạng viết, cú pháp khác)
+- Dễ bảo trì, nâng cấp, phù hợp với dự án
+-->
+
+<!--
+- Đối tượng: các thuộc tính, phương thức(hàm)
+- Lớp: khuôn để tạo các đối tượng
+-->
+<script>
+
+    //    Tạo lớp Cat: tên, cân nặng, màu, tuổi
+    //    Tạo 2 đối tượng từ lớp Cat
+    class Rectangle {
+        constructor(w, h) {
+            this.width = w;
+            this.height = h
+        }
+
+        getP() {
+            alert(2 * (this.width + this.height));
+        }
+        getS() {
+            alert(this.height * this.width);
+        }
+    }
+
+    let hcn1 = new Rectangle(10, 20);
+    hcn1.getP();
+    hcn1.getS();
+
+    //    Tạo lớp Rectangle: w, h. Phương thức: tinhChuVi, tinhDienTich (alert ra CV, DT của HCN);
+</script>
+</body>
+</html>
