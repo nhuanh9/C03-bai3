@@ -1,29 +1,25 @@
-// Tên lớp: TenLop;
-// Tên Thuộc tính: tenThuocTinh;
 // - CÁCH TẠO LỚP:
-class TaiLieu {
-    maTL: string;
-    tenNXB: string;
-    soPH: number;
-    constructor(maTL: string, tenNXB: string, soPH: number) { // khai báo hàm tạo
+var TaiLieu = /** @class */ (function () {
+    function TaiLieu(maTL, tenNXB, soPH) {
         this.maTL = maTL;
         this.tenNXB = tenNXB;
         this.soPH = soPH;
     }
-    hienThi() {// - CÁCH TẠO CÁC PHƯƠNG THỨC CỦA MỘT LỚP: phương thức tên là hienThi()
+    TaiLieu.prototype.hienThi = function () {
         // - CÁCH TẠO CÁC PHƯƠNG THỨC CÓ SỬ DỤNG THUỘC TÍNH CỦA LỚP
-        console.log(`Mã: ${this.maTL}, tên NXB: ${this.tenNXB}, số PH: ${this.soPH}`);
-    }
-}
+        console.log("M\u00E3: " + this.maTL + ", t\u00EAn NXB: " + this.tenNXB + ", s\u1ED1 PH: " + this.soPH);
+    };
+    return TaiLieu;
+}());
 // - CÁCH TẠO ĐỐI TƯỢNG TỰ DO
-let obj = { // Kiểu Object
+var obj = {
     maTL: 'A',
     tenNXB: 'A',
     soPH: 10
-}
+};
 // - CÁCH TẠO ĐỐI TƯỢNG TỪ LỚP
 // - HÀM TẠO LÀ HÀM NÀO? KHI NÀO ĐƯỢC GỌI: constructor ();
-let tl1 = new TaiLieu('B', 'B', 10); // 'new ... ()': gọi hàm tạo
+var tl1 = new TaiLieu('B', 'B', 10); // 'new ... ()': gọi hàm tạo
 // - CÁCH GỌI THUỘC TÍNH, PHƯƠNG THỨC CỦA LỚP
 console.log(tl1.tenNXB); // dùng thuộc tính
 tl1.hienThi(); // dùng phương thức
