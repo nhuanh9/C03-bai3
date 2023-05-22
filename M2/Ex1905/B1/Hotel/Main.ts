@@ -1,22 +1,27 @@
 import {KhachSan} from "./KhachSan";
 import {HoaDon} from "./HoaDon";
-
 let nhap = require('readline-sync');
+let choice = -1;
 let ql = new KhachSan();
-for (let i = 0; i < 3; i++) {
-    let cmnd = nhap.question('Nhập vào cmnd: ');
-    let ten = nhap.question('Nhập vào ten: ');
-    let tuoi = nhap.question('Nhập vào tuoi: ');
-    let soNgayThue = nhap.question('Nhập vào so ngay thue: ');
-    let loaiPhong = nhap.question('Nhập vào loai phong: ');
-    let hoaDonMoi = new HoaDon(cmnd, ten, tuoi, soNgayThue, loaiPhong);
-    ql.them(hoaDonMoi);
+while (true) {
+    console.log('Nhập vào lựa chọn:' +
+        '\n 1. Hiển thị' +
+        '\n 2. Thêm mới' +
+        '\n 0. Thoat')
+    choice = nhap.question('Chọn đê: ');
+    if (choice == 1) {
+        ql.hienThi();
+    }
+    if (choice == 2) {
+        console.log('Nhap vao thong tin hoa don moi nhe: ');
+        let cmnd = nhap.question('Nhap vao cmnd');
+        let ten = nhap.question('Nhap vao ten');
+        let tuoi = nhap.question('Nhap vao tuoi');
+        let soNgayThue = nhap.question('Nhap vao soNgayThue');
+        let loaiPhong = nhap.question('Nhap vao Loai phong');
+        ql.them(new HoaDon(cmnd, ten, tuoi, soNgayThue, loaiPhong));
+    }
+    if (choice == 0) {
+        break;
+    }
 }
-ql.hienThi();
-console.log('-----------------')
-let cmndXoa = nhap.question('Nhập vao so cmnd muốn xóa: ');
-ql.xoa(cmndXoa)
-ql.hienThi()
-console.log('-----------------')
-let cmndTinhTien = nhap.question('Nhập vao so cmnd muốn tính tiền: ');
-ql.tinhTien(cmndTinhTien);
