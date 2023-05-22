@@ -1,36 +1,66 @@
-let readlineSync = require('readline-sync');
-// npm i readline-sync
-class Student {
-    private _name: string;
-    private _age: number;
+let inp = require('readline-sync')
 
-    constructor(name: string, age: number) {
-        this._name = name;
-        this._age = age;
+class SinhVien {
+    private _ten: string;
+    private _ma: string;
+    private _diem: number;
+
+    constructor(ten: string, ma: string, diem: number) {
+        this._ten = ten;
+        this._ma = ma;
+        this._diem = diem;
     }
 
 
-    get name(): string {
-        return this._name;
+    get ten(): string {
+        return this._ten;
     }
 
-    set name(value: string) {
-        this._name = value;
+    set ten(value: string) {
+        this._ten = value;
     }
 
-    get age(): number {
-        return this._age;
+    get ma(): string {
+        return this._ma;
     }
 
-    set age(value: number) {
-        this._age = value;
+    set ma(value: string) {
+        this._ma = value;
     }
-    getI4() {
-        console.log('Name: '+this._name+', age: '+this._age);
+
+    get diem(): number {
+        return this._diem;
+    }
+
+    set diem(value: number) {
+        this._diem = value;
     }
 }
 
-let name1 = readlineSync.question('Nhập vào tên đi: ');
-let age = readlineSync.question('Nhập vào tuổi đi: ');
-let obj = new Student(name1, age);
-obj.getI4();
+let ten1 = inp.question('Nhập vào tên thằng 1:')
+let ma1 = inp.question('Nhập vào mã thằng 1:')
+let diem1 = inp.question('Nhập điểm mã thằng 1:')
+let sv1: SinhVien = new SinhVien(ten1, ma1, diem1);
+
+let ten2 = inp.question('Nhập vào tên thằng 2:')
+let ma2 = inp.question('Nhập vào mã thằng 2:')
+let diem2 = inp.question('Nhập điểm mã thằng 2:')
+let sv2: SinhVien = new SinhVien(ten2, ma2, diem2);
+
+let ten3 = inp.question('Nhập vào tên thằng 3:')
+let ma3 = inp.question('Nhập vào mã thằng 3:')
+let diem3 = inp.question('Nhập điểm mã thằng 3:')
+let sv3: SinhVien = new SinhVien(ten3, ma3, diem3);
+
+console.log('SV có điểm lớn nhất là: ');
+if (sv1.diem > sv2.diem && sv1.diem > sv3.diem) {
+    console.log(sv1)
+}
+if (sv2.diem > sv1.diem && sv2.diem > sv3.diem) {
+    console.log(sv2)
+}
+if (sv3.diem > sv2.diem && sv3.diem > sv1.diem) {
+    console.log(sv3)
+}
+
+
