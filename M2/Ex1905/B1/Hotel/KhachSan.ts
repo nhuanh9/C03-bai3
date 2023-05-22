@@ -1,6 +1,6 @@
 import {HoaDon} from "./HoaDon";
 
-class KhachSan { // quản lý
+export class KhachSan { // quản lý
     listHoaDon: HoaDon[] = [];
 
     them(hoaDon: HoaDon) {
